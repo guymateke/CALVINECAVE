@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALVINE CAVE | Vérification d'âge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .no {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Êtes-vous majeur ?</h1>
+        <p>Vous devez avoir 18 ans ou plus pour accéder à ce site.</p>
+        <button class="yes" onclick="allowAccess()">Oui, j'ai 18 ans ou plus</button>
+        <button class="no" onclick="denyAccess()">Non, je n'ai pas 18 ans</button>
+    </div>
+
+    <script>
+        function allowAccess() {
+            // Stocke l'information dans le stockage local pour éviter de redemander
+            localStorage.setItem('ageVerified', 'true');
+            // Redirige vers la page principale
+            window.location.href = "index.html";
+        }
+
+        function denyAccess() {
+            alert("Désolé, vous ne pouvez pas accéder à ce site.");
+            // Vous pouvez rediriger vers une autre page ou simplement fermer
+            window.location.href = "https://www.google.com";
+        }
+    </script>
+</body>
+</html>
